@@ -1,0 +1,17 @@
+{
+  "name": "binary-search",
+  "version": "1.0.0",
+  "description": "Binary Search Lab ",
+  "main": "binary-search.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/binary-search-tests.js"
+  },
+  "author": "Genevieve Osuorji",
+  "license": "MIT",
+  "dependencies": {
+    "expect": "^1.20.2"
+  }
+}

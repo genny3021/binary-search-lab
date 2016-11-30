@@ -1,0 +1,5 @@
+# IDE and Node js folders will not be committed #
+.idea
+node_modules/
+.DS_Store 
+
