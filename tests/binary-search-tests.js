@@ -26,8 +26,8 @@ Array.prototype.search = function(d){
 	var results = {};
 	var count = 0;
  
- 
-    while (min_index <= max_index) {
+ if (this.includes(element)){ //element exists in array
+	 while (min_index <= max_index) {
 		if (this[max_index] === element) {
             searchElementIndex = max_index;
 			break;
@@ -37,26 +37,31 @@ Array.prototype.search = function(d){
 			break;
 		}
 		else{
-        guess = Math.floor((min_index + max_index) / 2);
- 
-        if (this[guess] === element) {
-            searchElementIndex = guess;
-			break;
-        }
-        else {
-			
-            if (this[guess] < element) {
-                min_index = guess + 1;
-            }
-            else { //this[guess] > element
-                max_index = guess - 1;
-            }
-			
-        }
-		count++;
+			min_index = min_index + 1;
+			max_index = max_index - 1;
+        
+			guess = Math.floor((min_index + max_index) / 2);
+	 
+			if (this[guess] === element) {
+				searchElementIndex = guess;
+				break;
+			}
+			else {
+				
+				if (this[guess] < element) {
+					min_index = guess + 1;
+				}
+				else { //this[guess] > element
+					max_index = guess - 1;
+				}
+				
+			}
+			count++;
 		}
     }
 	
+ }
+    
  
 	results["count"] = count;
 	results["index"] = searchElementIndex;
